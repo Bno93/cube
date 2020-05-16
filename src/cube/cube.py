@@ -7,11 +7,8 @@ def init_cli():
     subparser = parser.add_subparsers(dest="subcmd", help="cmd help")
 
     Shuffle(subparser)
-
-
-
     return parser
-
+# end
 
 
 if __name__ == "__main__":
@@ -21,5 +18,10 @@ if __name__ == "__main__":
         args = parser.parse_args()
         args.func(args)
     except Exception as e:
-        print(e)
         parser.print_help()
+
+        raise e
+
+    # end
+# end
+

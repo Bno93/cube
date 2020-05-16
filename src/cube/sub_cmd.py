@@ -24,7 +24,6 @@ class Subcommand(ABC):
         self.cmd_help = kwargs["help"]
         self.cmd_parser = None
         self.setup(kwargs["subparser"])
-        self.alphabth = ["F", "R", "U", "L", "B", "D"]
 
     # @abstractmethod
     @make_command
@@ -37,7 +36,7 @@ class Subcommand(ABC):
         self.cmd_parser.set_defaults(func=self.execute)
 
     @abstractmethod
-    def execute(self, *args):
+    def execute(self, args):
         pass
     # end
 
